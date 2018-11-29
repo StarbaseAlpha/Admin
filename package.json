@@ -1,0 +1,29 @@
+{
+  "name": "@starbase/admin",
+  "version": "0.0.1",
+  "description": "Starbase Database Admin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "admin",
+    "starbase",
+    "channels",
+    "database",
+    "administration"
+  ],
+  "author": "Mike Fuller",
+  "license": "MIT",
+  "dependencies": {
+    "@starbase/therules": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starbasealpha/admin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/starbasealpha/admin/issues"
+  },
+  "homepage": "https://github.com/starbasealpha/admin#readme"
+}
