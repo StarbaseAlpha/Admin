@@ -25,7 +25,7 @@ const allMethods = {
     return kit.db.path(req.path).put(req.data);
   },
   "get":(req,kit,params) => {
-    return kit.db.path(req.path).get();
+    return kit.db.path(req.path).get(req.data);
   },
   "del":(req,kit,params) => {
     return kit.db.path(req.path).del();
