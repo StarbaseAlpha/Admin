@@ -10,22 +10,8 @@ function Admin(api,auth) {
     throw('Starbase Authentication object is missing.');
   }
 
-  const admin = async (req) => {
+  api.setTokenHandler(auth.getToken);
 
-    let {path,method,data} = req;
-    let token = null;
-
-    if (req.token) {
-      token = req.token;
-    } else {
-      token = await auth.getToken().catch(err=>{return null;});
-    }
-
-    api.setToken(token);
-    return api.path(path)[method](data);
-
-  };
-
-  return admin;
+  return api;
 
 }
