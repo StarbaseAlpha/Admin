@@ -21,7 +21,7 @@ function Admin(db, auth, options = {}) {
 
   let customRules = null;
   if (options.customRules && typeof options.customRules === 'object') {
-    customRules = options.rules;
+    customRules = options.customRules;
   }
 
   let customKit = null;
