@@ -98,9 +98,8 @@ const Rules = [
     "methods":allMethods
   },
 
-  // An example of how params could be defined at this deep level
   {
-    "path":"/:apps/:appID/:users/:userID/:posts/:postID/:comments/commentID/:replies/:replyID",
+    "path":"/:channel1/:channel2/:channel3/:channel4/:channel5/:channel6/:channel7/:channel8/:channel9/:channel10",
     "rules":allRules,
     "methods":allMethods
   },
