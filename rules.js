@@ -1,13 +1,13 @@
 'use strict';
 
-const getUser = (req, kit, params) => {
-  return kit.auth.verifyToken(req.token||"").then(token=>{return token.user;}).catch(err=>{return null;});
+const getUser = (body, kit, params) => {
+  return kit.auth.verifyToken(body.token||"").then(token=>{return token.user;}).catch(err=>{return null;});
 };
 
-const isAdminUser = async (req,kit,params) => {
-  let user = await getUser(req,kit,params);
+const isAdminUser = async (body,kit,params) => {
+  let user = await getUser(body,kit,params);
   if (kit.isAdminUser && typeof kit.isAdminUser === 'function') {
-    return kit.isAdminUser(req,kit,params);
+    return kit.isAdminUser(body,kit,params);
   } else {
     return user && user.username === kit.adminUser;
   }
@@ -21,17 +21,17 @@ const allRules = {
 };
 
 const allMethods = {
-  "put":(req,kit,params) => {
-    return kit.db.path(req.path).put(req.data);
+  "put":(body,kit,params) => {
+    return kit.db.path(body.path).put(body.data);
   },
-  "get":(req,kit,params) => {
-    return kit.db.path(req.path).get(req.data);
+  "get":(body,kit,params) => {
+    return kit.db.path(body.path).get(body.data);
   },
-  "del":(req,kit,params) => {
-    return kit.db.path(req.path).del();
+  "del":(body,kit,params) => {
+    return kit.db.path(body.path).del();
   },
-  "list":(req,kit,params) => {
-    return kit.db.path(req.path).list(req.data);
+  "list":(body,kit,params) => {
+    return kit.db.path(body.path).list(body.data);
   }
 };
 
